@@ -1,0 +1,13 @@
+[core]
+	filemode = false
+	autocrlf = true
+	editor = vim
+	excludesfile = ~/.gitignore
+	pager = less -x4
+[user]
+	name = Jakob Calero
+	email = jakob.calero@gmail.com
+[color]
+	ui = true
+[push]
+	default = current
