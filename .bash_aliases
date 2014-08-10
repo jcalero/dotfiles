@@ -26,3 +26,4 @@ alias vm='ssh jakob@192.168.56.101'
 alias gitclean='~/scripts/gitcleanup.sh'
 
 alias gs='git status'
+alias gd='git diff'

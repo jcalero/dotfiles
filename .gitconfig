@@ -1,6 +1,6 @@
 [core]
 	filemode = false
-	autocrlf = true
+	autocrlf = input
 	editor = vim
 	excludesfile = ~/.gitignore
 	pager = less -x4
