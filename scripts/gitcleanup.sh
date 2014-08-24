@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 BRANCH='fork';
 
 printf 'Branches to delete:\n';
-git branch --merged | grep -v '^* master$' | grep -v '^  master$';
+git branch --merged | grep -v '^* master$' | grep -v '^  master$' | grep -v '^* staging$' | grep -v '^  staging$';
 
 cleanupfinal() {
     printf '\nDeleting merged branches from remote ['$BRANCH']\n';
@@ -28,7 +28,7 @@ cleanupremote(){
 
 cleanup(){
     printf '\nCleaning up\n';
-    git branch --merged | grep -v '^* master$' | grep -v '^  master$' | xargs git branch -d;
+    git branch --merged | grep -v '^* master$' | grep -v '^  master$' | grep -v '^* staging$' | grep -v '^  staging$' | xargs git branch -d;
     while true
     do
         read -n1 -r -p 'Do you also want to delete them from remote ['$BRANCH']? [y/n]: ' choice2
