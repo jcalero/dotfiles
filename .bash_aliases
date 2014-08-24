@@ -25,5 +25,7 @@ alias l='ls -CF'
 alias vm='ssh jakob@192.168.56.101'
 alias gitclean='~/scripts/gitcleanup.sh'
 
+alias git='hub'
+
 alias gs='git status'
 alias gd='git diff'
