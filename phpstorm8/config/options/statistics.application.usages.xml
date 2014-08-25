@@ -21,89 +21,89 @@
       <project id="gousto2core" values="1" />
       <project id="gousto2frontend" values="1" />
       <project id="www" values="1" />
-      <project id="gousto-frontend" values="1" />
       <project id="untitled" values="0" />
+      <project id="gousto-frontend" values="1" />
     </group>
     <group name="php-interpreter-version">
       <project id="goustofrontend" values="5.3.3" />
       <project id="gousto2core" values="not installed" />
       <project id="gousto2frontend" values="5.3.27" />
       <project id="www" values="5.3.27" />
-      <project id="gousto-frontend" values="not installed" />
       <project id="untitled" values="not installed" />
+      <project id="gousto-frontend" values="not installed" />
     </group>
     <group name="deployment server">
-      <project id="goustofrontend" values="MOUNT,LOCAL" />
+      <project id="goustofrontend" values="LOCAL,MOUNT" />
       <project id="gousto2core" values="MOUNT,LOCAL" />
       <project id="gousto2frontend" values="MOUNT,LOCAL" />
-      <project id="www" values="LOCAL,MOUNT" />
-      <project id="gousto-frontend" values="MOUNT,LOCAL" />
+      <project id="www" values="MOUNT,LOCAL" />
       <project id="untitled" values="LOCAL" />
+      <project id="gousto-frontend" values="LOCAL,MOUNT" />
     </group>
     <group name="module type">
       <project id="goustofrontend" values="WEB_MODULE" />
       <project id="gousto2core" values="WEB_MODULE" />
       <project id="gousto2frontend" values="WEB_MODULE" />
       <project id="www" values="WEB_MODULE" />
-      <project id="gousto-frontend" values="WEB_MODULE" />
       <project id="untitled" values="WEB_MODULE" />
+      <project id="gousto-frontend" values="WEB_MODULE" />
     </group>
     <group name="php-servers">
       <project id="goustofrontend" values="0" />
       <project id="gousto2core" values="2" />
       <project id="gousto2frontend" values="2" />
       <project id="www" values="2" />
-      <project id="gousto-frontend" values="0" />
       <project id="untitled" values="0" />
+      <project id="gousto-frontend" values="0" />
     </group>
     <group name="php-include-path">
       <project id="goustofrontend" values="0" />
       <project id="gousto2core" values="0" />
       <project id="gousto2frontend" values="1" />
       <project id="www" values="0" />
-      <project id="gousto-frontend" values="0" />
       <project id="untitled" values="0" />
+      <project id="gousto-frontend" values="0" />
     </group>
     <group name="run-configuration-type-temp">
       <project id="goustofrontend" values="PhpUnitRemoteRunConfigurationType" />
     </group>
     <group name="file-type">
-      <project id="goustofrontend" values="SCSS,JavaScript,htaccess,Ini,UNKNOWN,XML,TypeScript,SASS,HTML,JSON,LESS,Images,PHP,ReST,CSS,Locale,YAML,CoffeeScript,PLAIN_TEXT,ARCHIVE,PHAR" />
-      <project id="gousto2core" values="Blade,YAML,TypeScript,DATASOURCE_STORAGE,ReST,Ini,JavaScript,JSON,Bash,UNKNOWN,ARCHIVE,XML,HTML,CSS,Locale,htaccess,PLAIN_TEXT,Images,PHP" />
-      <project id="gousto2frontend" values="DATASOURCE_STORAGE,XML,HTML,ARCHIVE,SASS,JavaScript,PLAIN_TEXT,PHP,Bash,SCSS,ReST,TypeScript,Ini,UNKNOWN,Images,Locale,JSON,htaccess,LESS,YAML,CoffeeScript,Blade,CSS" />
-      <project id="www" values="PLAIN_TEXT,Ini,PHAR,JSON,Bash,TypeScript,SCSS,YAML,ARCHIVE,XML,DATASOURCE_STORAGE,htaccess,ReST,SASS,Images,CSS,PHP,LESS,CoffeeScript,Locale,HTML,UNKNOWN,JavaScript" />
-      <project id="gousto-frontend" values="PHAR,CoffeeScript,LESS,PLAIN_TEXT,Blade,PHP,ReST,Locale,XML,htaccess,SASS,HTML,Images,YAML,ARCHIVE,JavaScript,Ini,TypeScript,SCSS,JSON,UNKNOWN,CSS" />
-      <project id="untitled" values="DATASOURCE_STORAGE,XML,UNKNOWN" />
-    </group>
-    <group name="jdbc-driver">
-      <project id="gousto2core" values="com.mysql.jdbc.Driver" />
-      <project id="gousto2frontend" values="com.mysql.jdbc.Driver" />
-      <project id="www" values="com.mysql.jdbc.Driver" />
-      <project id="untitled" values="com.mysql.jdbc.Driver" />
-    </group>
-    <group name="javaScript Scope Usages">
-      <project id="goustofrontend" values="Project,Project" />
-      <project id="gousto2core" values="Project,Project" />
-      <project id="gousto2frontend" values="Project,Project" />
-      <project id="www" values="Project,Project" />
-      <project id="gousto-frontend" values="Project,Project" />
-      <project id="untitled" values="Project,Project" />
-    </group>
-    <group name="php-debug-skipped-paths">
-      <project id="goustofrontend" values="0" />
-      <project id="gousto2core" values="0" />
-      <project id="gousto2frontend" values="0" />
-      <project id="www" values="0" />
-      <project id="gousto-frontend" values="0" />
-      <project id="untitled" values="0" />
+      <project id="goustofrontend" values="PHAR,htaccess,XML,PLAIN_TEXT,LESS,Images,HTML,JavaScript,UNKNOWN,TypeScript,ARCHIVE,PHP,SASS,CSS,Ini,YAML,JSON,CoffeeScript,ReST,SCSS,Locale" />
+      <project id="gousto2core" values="JSON,ReST,DATASOURCE_STORAGE,UNKNOWN,XML,PHP,CSS,YAML,Bash,Locale,PLAIN_TEXT,TypeScript,HTML,JavaScript,htaccess,Blade,Images,Ini,ARCHIVE" />
+      <project id="gousto2frontend" values="YAML,Locale,ReST,UNKNOWN,htaccess,Bash,LESS,SCSS,TypeScript,CoffeeScript,JavaScript,DATASOURCE_STORAGE,CSS,Blade,HTML,SASS,PHP,Images,Ini,JSON,PLAIN_TEXT,XML,ARCHIVE" />
+      <project id="www" values="JavaScript,CoffeeScript,ReST,LESS,ARCHIVE,PLAIN_TEXT,JSON,Locale,SCSS,HTML,Ini,TypeScript,DATASOURCE_STORAGE,UNKNOWN,PHP,Images,SASS,PHAR,CSS,htaccess,Bash,YAML,XML" />
+      <project id="untitled" values="XML,UNKNOWN,DATASOURCE_STORAGE" />
+      <project id="gousto-frontend" values="LESS,HTML,YAML,PLAIN_TEXT,ARCHIVE,JavaScript,SASS,JSON,UNKNOWN,htaccess,ReST,CSS,TypeScript,Images,Blade,PHP,Ini,CoffeeScript,SCSS,Locale,XML,PHAR" />
     </group>
     <group name="JavaScript versions">
       <project id="goustofrontend" values="DEFAULT" />
       <project id="gousto2core" values="DEFAULT" />
       <project id="gousto2frontend" values="DEFAULT" />
       <project id="www" values="DEFAULT" />
-      <project id="gousto-frontend" values="DEFAULT" />
       <project id="untitled" values="DEFAULT" />
+      <project id="gousto-frontend" values="DEFAULT" />
+    </group>
+    <group name="php-debug-skipped-paths">
+      <project id="goustofrontend" values="0" />
+      <project id="gousto2core" values="0" />
+      <project id="gousto2frontend" values="0" />
+      <project id="www" values="0" />
+      <project id="untitled" values="0" />
+      <project id="gousto-frontend" values="0" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="goustofrontend" values="Project,Project" />
+      <project id="gousto2core" values="Project,Project" />
+      <project id="gousto2frontend" values="Project,Project" />
+      <project id="www" values="Project,Project" />
+      <project id="untitled" values="Project,Project" />
+      <project id="gousto-frontend" values="Project,Project" />
+    </group>
+    <group name="jdbc-driver">
+      <project id="gousto2core" values="com.mysql.jdbc.Driver" />
+      <project id="gousto2frontend" values="com.mysql.jdbc.Driver" />
+      <project id="www" values="com.mysql.jdbc.Driver" />
+      <project id="untitled" values="com.mysql.jdbc.Driver" />
     </group>
   </component>
   <component name="UsageTrigger">
@@ -125,7 +125,7 @@
       <entry feature="ide.settings.JavaScript" count="1" />
       <entry feature="ide.settings.Keymap" count="8" />
       <entry feature="ide.settings.Web_Browsers" count="1" />
-      <entry feature="ideaapp.started" count="25" />
+      <entry feature="ideaapp.started" count="26" />
       <entry feature="uml.ShowDiagram.DATABASE" count="3" />
       <entry feature="uml.ShowDiagram.DATABASE.popup" count="1" />
     </counts>
