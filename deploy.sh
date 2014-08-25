@@ -2,16 +2,16 @@
 B="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
-## Home scripts
-ln -sfv $B/.bash_profile ~/.bash_profile
-ln -sfv $B/.bashrc ~/.bashrc
-ln -sfv $B/.bash_aliases ~/.bash_aliases
-ln -sfv $B/.bash_prompt ~/.bash_prompt
+## Shell config
+ln -sfv $B/shell/.bash_profile ~/.bash_profile
+ln -sfv $B/shell/.bashrc ~/.bashrc
+ln -sfv $B/shell/.bash_aliases ~/.bash_aliases
+ln -sfv $B/shell/.bash_prompt ~/.bash_prompt
 
 
 ## Git scripts
-ln -sfv $B/.gitconfig ~/.gitconfig
-ln -sfv $B/.gitignore ~/.gitignore
+ln -sfv $B/git/.gitconfig ~/.gitconfig
+ln -sfv $B/git/.gitignore ~/.gitignore
 
 
 ## Custom scripts

@@ -2,7 +2,7 @@
 <versions>
   <component name="AbbreviationManager" version="1408623451288" />
   <component name="CodeInsightSettings" version="1408958245215" />
-  <component name="CodeStyleSchemeSettings" version="1408958377874" />
+  <component name="CodeStyleSchemeSettings" version="1408960921409" />
   <component name="CvsApplicationLevelConfiguration" version="1408917103541" />
   <component name="DaemonCodeAnalyzerSettings" version="1408960826838" />
   <component name="DatabaseSettings" version="1408917103541" />
@@ -11,7 +11,7 @@
   <component name="EditorSettings" version="1408960826842" />
   <component name="Encoding" version="1408960826842" />
   <component name="ErrorReportConfigurable" version="1408916257074" />
-  <component name="ExportableFileTemplateSettings" version="1408958383375" />
+  <component name="ExportableFileTemplateSettings" version="1408960921411" />
   <component name="ExportableTemplateSettings" version="1408958245218" />
   <component name="FeatureUsageStatistics" version="1408958245218" />
   <component name="FileBasedIndex" version="1408960826842" />
@@ -41,7 +41,7 @@
   <component name="UISettings" version="1408960826861" />
   <component name="UpdatesConfigurable" version="1408960826861" />
   <component name="UsageTrigger" version="1408960826862" />
-  <component name="UsageViewSettings" version="1408958245239" />
+  <component name="UsageViewSettings" version="1408960921415" />
   <component name="UsagesStatistic" version="1408960826863" />
   <component name="WebBrowsersConfiguration" version="1408958245242" />
   <component name="WebServers" version="1408960826864" />
@@ -49,7 +49,7 @@
   <component name="XDebuggerSettings" version="1408958245245" />
   <component name="XPathView.XPathViewPlugin" version="1408960826865" />
   <component name="XSLT-Support.Configuration" version="1408960826865" />
-  <component name="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl" version="1408958383379" />
+  <component name="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl" version="1408960921429" />
   <component name="com.intellij.javaee.ExternalResourceManagerExImpl" version="1408960826866" />
   <component name="com.intellij.javaee.ExternalResourceManagerImpl" version="1407086785732" />
 </versions>
