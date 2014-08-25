@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="vcs">
+      <project id="goustofrontend" values="Git" />
+      <project id="gousto-frontend" values="Git" />
+    </group>
+    <group name="php-interpreter-debug-ext">
+      <project id="goustofrontend" values="xdebug" />
+      <project id="gousto2frontend" values="xdebug" />
+      <project id="www" values="xdebug" />
+    </group>
+    <group name="jdbc-datasource">
+      <project id="gousto2core" values="MySQL/5.1.73" />
+      <project id="gousto2frontend" values="MySQL/5.1.73" />
+      <project id="www" values="MySQL/5.1.73" />
+      <project id="untitled" values="MySQL/5.1.73" />
+    </group>
+    <group name="php-interpreters">
+      <project id="goustofrontend" values="1" />
+      <project id="gousto2core" values="1" />
+      <project id="gousto2frontend" values="1" />
+      <project id="www" values="1" />
+      <project id="gousto-frontend" values="1" />
+      <project id="untitled" values="0" />
+    </group>
+    <group name="php-interpreter-version">
+      <project id="goustofrontend" values="5.3.3" />
+      <project id="gousto2core" values="not installed" />
+      <project id="gousto2frontend" values="5.3.27" />
+      <project id="www" values="5.3.27" />
+      <project id="gousto-frontend" values="not installed" />
+      <project id="untitled" values="not installed" />
+    </group>
+    <group name="deployment server">
+      <project id="goustofrontend" values="MOUNT,LOCAL" />
+      <project id="gousto2core" values="MOUNT,LOCAL" />
+      <project id="gousto2frontend" values="MOUNT,LOCAL" />
+      <project id="www" values="LOCAL,MOUNT" />
+      <project id="gousto-frontend" values="MOUNT,LOCAL" />
+      <project id="untitled" values="LOCAL" />
+    </group>
+    <group name="module type">
+      <project id="goustofrontend" values="WEB_MODULE" />
+      <project id="gousto2core" values="WEB_MODULE" />
+      <project id="gousto2frontend" values="WEB_MODULE" />
+      <project id="www" values="WEB_MODULE" />
+      <project id="gousto-frontend" values="WEB_MODULE" />
+      <project id="untitled" values="WEB_MODULE" />
+    </group>
+    <group name="php-servers">
+      <project id="goustofrontend" values="0" />
+      <project id="gousto2core" values="2" />
+      <project id="gousto2frontend" values="2" />
+      <project id="www" values="2" />
+      <project id="gousto-frontend" values="0" />
+      <project id="untitled" values="0" />
+    </group>
+    <group name="php-include-path">
+      <project id="goustofrontend" values="0" />
+      <project id="gousto2core" values="0" />
+      <project id="gousto2frontend" values="1" />
+      <project id="www" values="0" />
+      <project id="gousto-frontend" values="0" />
+      <project id="untitled" values="0" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="goustofrontend" values="PhpUnitRemoteRunConfigurationType" />
+    </group>
+    <group name="file-type">
+      <project id="goustofrontend" values="SCSS,JavaScript,htaccess,Ini,UNKNOWN,XML,TypeScript,SASS,HTML,JSON,LESS,Images,PHP,ReST,CSS,Locale,YAML,CoffeeScript,PLAIN_TEXT,ARCHIVE,PHAR" />
+      <project id="gousto2core" values="Blade,YAML,TypeScript,DATASOURCE_STORAGE,ReST,Ini,JavaScript,JSON,Bash,UNKNOWN,ARCHIVE,XML,HTML,CSS,Locale,htaccess,PLAIN_TEXT,Images,PHP" />
+      <project id="gousto2frontend" values="DATASOURCE_STORAGE,XML,HTML,ARCHIVE,SASS,JavaScript,PLAIN_TEXT,PHP,Bash,SCSS,ReST,TypeScript,Ini,UNKNOWN,Images,Locale,JSON,htaccess,LESS,YAML,CoffeeScript,Blade,CSS" />
+      <project id="www" values="PLAIN_TEXT,Ini,PHAR,JSON,Bash,TypeScript,SCSS,YAML,ARCHIVE,XML,DATASOURCE_STORAGE,htaccess,ReST,SASS,Images,CSS,PHP,LESS,CoffeeScript,Locale,HTML,UNKNOWN,JavaScript" />
+      <project id="gousto-frontend" values="PHAR,CoffeeScript,LESS,PLAIN_TEXT,Blade,PHP,ReST,Locale,XML,htaccess,SASS,HTML,Images,YAML,ARCHIVE,JavaScript,Ini,TypeScript,SCSS,JSON,UNKNOWN,CSS" />
+      <project id="untitled" values="DATASOURCE_STORAGE,XML,UNKNOWN" />
+    </group>
+    <group name="jdbc-driver">
+      <project id="gousto2core" values="com.mysql.jdbc.Driver" />
+      <project id="gousto2frontend" values="com.mysql.jdbc.Driver" />
+      <project id="www" values="com.mysql.jdbc.Driver" />
+      <project id="untitled" values="com.mysql.jdbc.Driver" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="goustofrontend" values="Project,Project" />
+      <project id="gousto2core" values="Project,Project" />
+      <project id="gousto2frontend" values="Project,Project" />
+      <project id="www" values="Project,Project" />
+      <project id="gousto-frontend" values="Project,Project" />
+      <project id="untitled" values="Project,Project" />
+    </group>
+    <group name="php-debug-skipped-paths">
+      <project id="goustofrontend" values="0" />
+      <project id="gousto2core" values="0" />
+      <project id="gousto2frontend" values="0" />
+      <project id="www" values="0" />
+      <project id="gousto-frontend" values="0" />
+      <project id="untitled" values="0" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="goustofrontend" values="DEFAULT" />
+      <project id="gousto2core" values="DEFAULT" />
+      <project id="gousto2frontend" values="DEFAULT" />
+      <project id="www" values="DEFAULT" />
+      <project id="gousto-frontend" values="DEFAULT" />
+      <project id="untitled" values="DEFAULT" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="5" />
+      <entry feature="NewDirectoryProjectAction.empty" count="1" />
+      <entry feature="execute.PhpUnitRemoteRunConfigurationType.Debug" count="1" />
+      <entry feature="execute.PhpUnitRemoteRunConfigurationType.Run" count="3" />
+      <entry feature="ide.settings.Appearance" count="9" />
+      <entry feature="ide.settings.CSS" count="1" />
+      <entry feature="ide.settings.Code_Folding" count="3" />
+      <entry feature="ide.settings.Directories" count="2" />
+      <entry feature="ide.settings.Editor" count="1" />
+      <entry feature="ide.settings.Editor_Tabs" count="1" />
+      <entry feature="ide.settings.File_and_Code_Templates" count="3" />
+      <entry feature="ide.settings.General" count="6" />
+      <entry feature="ide.settings.HTML" count="1" />
+      <entry feature="ide.settings.Inspections" count="1" />
+      <entry feature="ide.settings.JavaScript" count="1" />
+      <entry feature="ide.settings.Keymap" count="8" />
+      <entry feature="ide.settings.Web_Browsers" count="1" />
+      <entry feature="ideaapp.started" count="25" />
+      <entry feature="uml.ShowDiagram.DATABASE" count="3" />
+      <entry feature="uml.ShowDiagram.DATABASE.popup" count="1" />
+    </counts>
+  </component>
+</application>
+

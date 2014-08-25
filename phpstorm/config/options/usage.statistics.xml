@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="UsagesStatistic" time="1406616649960" allowed="true" show-notification="false" period="weekly">
+    <group id="JavaScript versions" priority="0.0" data="DEFAULT=2" />
+    <group id="Look and Feel" priority="0.0" data="Windows 8 - windows - Darcula=1" />
+    <group id="UI Features" priority="0.0" data="Tabs Top=1,Nav Bar floating=1,Toolbar and NavBar hidden=1,Toolbar hidden=1,Recent Files (30  50]=1,Tool Window buttons visible=1,Line Numbers=1,Status bar visible=1" />
+    <group id="deployment server" priority="0.0" data="LOCAL=2" />
+    <group id="features counts" priority="0.0" data="NewDirectoryProjectAction.empty=1" />
+    <group id="file-type" priority="0.0" data="JavaScript=1,PLAIN_TEXT=1,XML=2,ARCHIVE=1,LESS=1,DATASOURCE_STORAGE=1,PHP=1,CSS=1,Locale=1,JSON=1,SASS=1,Images=1,PHAR=1,UNKNOWN=2,TypeScript=1,CoffeeScript=1,ReST=1,Ini=1,YAML=1,SCSS=1,HTML=1,htaccess=1" />
+    <group id="javaScript Scope Usages" priority="0.0" data="Project=4" />
+    <group id="jdbc-datasource" priority="0.0" data="MySQL/5.1.73=1" />
+    <group id="jdbc-driver" priority="0.0" data="com.mysql.jdbc.Driver=1" />
+    <group id="module type" priority="0.0" data="WEB_MODULE=2" />
+    <group id="non-bundled-plugins" priority="0.0" data="com.intellij=1" />
+    <group id="php-debug-skipped-paths" priority="0.0" data="0=2" />
+    <group id="php-include-path" priority="0.0" data="0=2" />
+    <group id="php-interpreter-version" priority="0.0" data="not installed=2" />
+    <group id="php-interpreters" priority="0.0" data="0=2" />
+    <group id="php-servers" priority="0.0" data="0=2" />
+    <group id="productivity" priority="0.0" data="SearchEverywhere=1,editing.completion.basic=1,editing.completion.finishByControlEnter=1,ui.scheme.quickswitch=2" />
+    <group id="user.os.name" priority="0.0" data="Windows=1" />
+    <group id="user.os.version" priority="0.0" data="Windows 8 6.2=1" />
+  </component>
+</application>
+
