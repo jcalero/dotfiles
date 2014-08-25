@@ -1,2 +1,5 @@
 phpstorm8/config/options/appComponentVersions.xml
 phpstorm8/config/componentVersions/
+phpstorm8/config/options/statistics.application.usages.xml
+phpstorm8/config/options/window.manager.xml
+phpstorm8/config/plugins/
