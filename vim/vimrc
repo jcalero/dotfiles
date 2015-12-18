@@ -1,0 +1,133 @@
+" ==================== GENERAL SETTINGS ==================== "
+
+syntax enable " Enable syntax hilighting
+colorscheme monokai " Enable monokai theme
+
+set mouse=a " Set mouse mode on
+set nocompatible " Disable backwards comp with Vi (needed)
+set textwidth=80 " Set right edge margin
+set tabstop=2 " Set tab press to do 2 spaces
+set shiftwidth=2 " Set >>  << to indent by 2 spaces
+set expandtab " Use spaces for tabs
+set laststatus=2 " Always show statusline
+set number " Show line numbers
+set backspace=2 " Normal backspace functionality
+set showtabline=0 " Hide top bar (buffer/tabline)
+set timeoutlen=1000 " Snappier timeout for commands
+set ttimeoutlen=0 " Helps fast <Esc>
+
+" ==================== KEYBINDINGS ==================== "
+
+" Special remap for Alt key in xterm (Terminator)
+if &term == 'xterm'
+  execute "set <A-j>=\ej"
+  execute "set <A-k>=\ek"
+endif
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" Move lines up/down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Copy/paste to/from system clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>P "+P
+
+" Jump between last files with C-o instead of C-6
+nnoremap <C-o> :e #<CR>
+
+" Quit with C-x
+nnoremap <C-x> :q<CR>
+vnoremap <C-x> <C-o>:q<CR>
+
+" Save buffer on C-s
+nnoremap <silent> <C-s> :update<CR>
+inoremap <silent> <C-s> <Esc>:update<CR>
+vnoremap <silent> <C-s> <C-o>:update<CR>
+
+" Toggle NERDTree explorer
+map <silent> <C-I> :NERDTreeToggle<CR>
+
+" CamelCaseMotion word navigation
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+
+" ==================== LANGUAGE SETTINGS ==================== " :
+
+au FileType python
+  \  set textwidth=79
+  \| set shiftwidth=4
+  \| set softtabstop=4
+
+" ==================== PLUGINS ==================== "
+
+execute pathogen#infect()
+call pathogen#helptags()
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim' " Vundle Plugin manager
+Plugin 'tpope/vim-fugitive' " Vim git integration
+Plugin 'scrooloose/nerdtree' " Visual file browser
+Plugin 'Xuyuanp/nerdtree-git-plugin' " Git support for NERDTree
+Plugin 'ctrlpvim/ctrlp.vim' " Ctrl+P - File search/jump/navigator
+Plugin 'scrooloose/nerdcommenter' " Code block commenter
+Plugin 'bling/vim-airline' " Vim statusline
+Plugin 'pearofducks/ansible-vim' " YAML and ansible support
+Plugin 'avakhov/vim-yaml' " Basic YAML support
+Plugin 'plasticboy/vim-markdown' " Markdown syntax highlighting.
+Plugin 'waylan/vim-markdown-extra-preview' " Browser preview for markdown.
+Plugin 'tpope/vim-surround' " Surround text with brackets/quotes/etc
+Plugin 'suan/vim-instant-markdown' " Markdown previewer
+Plugin 'nvie/vim-flake8' " Pep8/Flake8 syntax checker
+Plugin 'vim-autopep8' " Auto pep8 formatter
+Plugin 'scrooloose/syntastic' " Stynax highlighter
+Plugin 'moll/vim-bbye' " Buffer cleaner/closer
+Plugin 'airblade/vim-gitgutter' " Git diff in gutter
+Plugin 'bkad/CamelCaseMotion' " Navigate words with camelCase
+Plugin 'Valloric/YouCompleteMe' " Code completion
+
+call vundle#end()
+filetype plugin indent on
+
+" ==================== PLUGIN SETTINGS ==================== "
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 0
+
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" ==================== CUSTOM COMMANDS ==================== "
+
+" Access everywhere and autoreload .vimrc
+map <leader>vimrc :tabe ~/.vimrc<cr>
+autocmd bufwritepost .vimrc source $MYVIMRC
+
+" Automatically change directory to current file
+autocmd BufEnter * lcd %:p:h
