@@ -102,6 +102,9 @@ Plugin 'moll/vim-bbye' " Buffer cleaner/closer
 Plugin 'airblade/vim-gitgutter' " Git diff in gutter
 Plugin 'bkad/CamelCaseMotion' " Navigate words with camelCase
 Plugin 'Valloric/YouCompleteMe' " Code completion
+Plugin 'rking/ag.vim' " File search
+Plugin 'fatih/vim-go' " Vim go support
+Plugin 'tpope/vim-repeat' " dot support for plugins
 
 call vundle#end()
 filetype plugin indent on
@@ -117,11 +120,25 @@ let g:airline#extensions#tabline#enabled = 0
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
+" Instant Markdown
+let g:instant_markdown_autostart = 0
+
 " CtrlP
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.(git)$',
+  \ 'file': '\v\.(pyc|so|dll)$'
+  \ }
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" NERDTree
+let NERDTreeIgnore = ['\.pyc$']
+
+" Syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " ==================== CUSTOM COMMANDS ==================== "
 
@@ -131,3 +148,7 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Automatically change directory to current file
 autocmd BufEnter * lcd %:p:h
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+command! Md InstantMarkdownPreview
