@@ -53,6 +53,10 @@ nnoremap <silent> <C-s> :update<CR>
 inoremap <silent> <C-s> <Esc>:update<CR>
 vnoremap <silent> <C-s> <C-o>:update<CR>
 
+" Insert new lines without going into insert mode
+nnoremap oo m`o<Esc>``
+nnoremap OO O<Esc>
+
 " Toggle NERDTree explorer
 map <silent> <C-I> :NERDTreeToggle<CR>
 
