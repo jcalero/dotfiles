@@ -1,9 +1,12 @@
 configs
 =======
 
-Install by running <code>./deploy.sh</code>
-
 Linux home configuration files and scripts
 
-Git aware promt required for git prompt (will automatically download it):
-https://github.com/jimeh/git-aware-prompt
+## Checklist (Draft)
+
+- Install virtualenv + virtualenvwrapper
+- Install monokai vim theme
+- Compile YCM in vim
+- Install zsh + oh-my-zsh
+- Install Powerline fonts - https://github.com/powerline/fonts
