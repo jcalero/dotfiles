@@ -1,0 +1,23 @@
+[global_config]
+  handle_size = 1
+  tab_position = hidden
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.9
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
+    font = Source Code Pro for Powerline Medium 11
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
