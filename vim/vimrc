@@ -15,6 +15,9 @@ set backspace=2 " Normal backspace functionality
 set showtabline=0 " Hide top bar (buffer/tabline)
 set timeoutlen=1000 " Snappier timeout for commands
 set ttimeoutlen=0 " Helps fast <Esc>
+set hlsearch " Highlight search matches
+set cursorline " Highlight current line
+hi Search cterm=none ctermbg=240 " Set highlight color for Search match
 
 " ==================== KEYBINDINGS ==================== "
 
