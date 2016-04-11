@@ -151,9 +151,6 @@ let g:syntastic_python_flake8_args="--ignore=E501,E123"
 map <leader>vimrc :tabe ~/.vimrc<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 
-" Automatically change directory to current file
-autocmd BufEnter * lcd %:p:h
-
 autocmd BufWritePre * :%s/\s\+$//e
 
 command! Md InstantMarkdownPreview
