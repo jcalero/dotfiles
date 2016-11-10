@@ -21,6 +21,8 @@ hi Search cterm=none ctermbg=240 " Set highlight color for Search match
 
 " ==================== KEYBINDINGS ==================== "
 
+let mapleader="`"
+
 " Special remap for Alt key in xterm (Terminator)
 if &term == 'xterm'
   execute "set <A-j>=\ej"
@@ -69,10 +71,11 @@ sunmap b
 sunmap e
 sunmap ge
 
+noremap <silent> <Leader>z :noh<CR>
+
 " ==================== LANGUAGE SETTINGS ==================== " :
 
 au FileType python
-  \  set textwidth=79
   \| set shiftwidth=4
   \| set softtabstop=4
 
@@ -108,6 +111,7 @@ Plugin 'Valloric/YouCompleteMe' " Code completion
 Plugin 'rking/ag.vim' " File search
 Plugin 'fatih/vim-go' " Vim go support
 Plugin 'tpope/vim-repeat' " dot support for plugins
+Plugin 'elzr/vim-json' " Json extra support
 
 call vundle#end()
 filetype plugin indent on
@@ -137,7 +141,7 @@ let g:ctrlp_custom_ignore = {
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " NERDTree
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '__pycache__']
 
 " Syntastic
 let g:syntastic_check_on_open = 1
@@ -152,5 +156,8 @@ map <leader>vimrc :tabe ~/.vimrc<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Custom filetypes
+autocmd BufNewFile,BufRead *.sls set syntax=yaml
 
 command! Md InstantMarkdownPreview
