@@ -49,7 +49,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gvm)
+plugins=(git)
 
 # User configuration
 
@@ -60,9 +60,6 @@ export PROJECT_HOME=$HOME/code
 source /usr/local/bin/virtualenvwrapper.sh
 
 export PATH=$PATH:$HOME/.vimpkg/bin
-
-# gvm config
-source ~/.gvm/scripts/gvm
 
 alias vim="stty stop '' -ixoff ; vim"
 # `Frozing' tty, so after any command terminal settings will be restored
