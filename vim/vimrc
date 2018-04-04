@@ -109,7 +109,6 @@ Plugin 'airblade/vim-gitgutter' " Git diff in gutter
 Plugin 'bkad/CamelCaseMotion' " Navigate words with camelCase
 Plugin 'Valloric/YouCompleteMe' " Code completion
 Plugin 'rking/ag.vim' " File search
-Plugin 'fatih/vim-go' " Vim go support
 Plugin 'tpope/vim-repeat' " dot support for plugins
 Plugin 'elzr/vim-json' " Json extra support
 
