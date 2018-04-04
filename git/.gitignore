@@ -1,4 +1,2 @@
 .idea/
 _ide_helper*
-/app/config/*
-/app/database/seeds/sample/PromotionRule.csv
