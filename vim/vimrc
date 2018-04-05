@@ -21,7 +21,7 @@ hi Search cterm=none ctermbg=240 " Set highlight color for Search match
 
 " ==================== KEYBINDINGS ==================== "
 
-let mapleader="`"
+let mapleader="\\"
 
 " Special remap for Alt key in xterm (Terminator)
 if &term == 'xterm'
