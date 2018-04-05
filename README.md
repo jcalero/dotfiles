@@ -26,6 +26,7 @@ Linux home configuration files and scripts
 - Install vim with +python & +python3 support (https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source + https://gist.github.com/erickpatrick/5e0923d3645eaf4056b6b9fee4c91e2f)
 - Install monokai vim theme (https://github.com/crusoexia/vim-monokai)
 - Install Vundle (https://github.com/VundleVim/Vundle.vim#quick-start)
+- Install ag: `sudo apt-get install silversearcher-ag` (https://github.com/ggreer/the_silver_searcher)
 - **Run** `ln -sfv [dotfiles]/vim/vimrc ~/.vimrc`
 - Start `vim` (ignore errors) and run `:PluginInstall`
 - Compile YCM in vim (https://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64)
