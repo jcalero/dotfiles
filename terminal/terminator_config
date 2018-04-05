@@ -4,6 +4,8 @@
 [keybindings]
   go_down = <Primary><Alt>j
   go_left = <Primary><Alt>h
+  go_next = <Primary><Shift>braceright
+  go_prev = <Primary><Shift>braceleft
   go_right = <Primary><Alt>l
   go_up = <Primary><Alt>k
   next_tab = <Primary><Alt>bracketright
@@ -13,7 +15,7 @@
   resize_right = <Primary><Shift>l
   resize_up = <Primary><Shift>k
   split_horiz = <Primary><Shift>b
-  split_vert = <Primary><Shift>o
+  split_vert = <Primary><Shift>n
 [layouts]
   [[default]]
     [[[child1]]]
