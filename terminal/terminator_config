@@ -2,22 +2,34 @@
   handle_size = 1
   tab_position = hidden
 [keybindings]
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.9
-    background_type = transparent
-    background_image = None
-    show_titlebar = False
-    font = Source Code Pro for Powerline Medium 11
-    scrollback_infinite = True
+  go_down = <Primary><Alt>j
+  go_left = <Primary><Alt>h
+  go_right = <Primary><Alt>l
+  go_up = <Primary><Alt>k
+  next_tab = <Primary><Alt>bracketright
+  prev_tab = <Primary><Alt>bracketleft
+  resize_down = <Primary><Shift>j
+  resize_left = <Primary><Shift>h
+  resize_right = <Primary><Shift>l
+  resize_up = <Primary><Shift>k
+  split_horiz = <Primary><Shift>b
+  split_vert = <Primary><Shift>o
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro for Powerline Medium 11
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
