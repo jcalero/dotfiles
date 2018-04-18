@@ -16,7 +16,7 @@ Linux home configuration files and scripts
 ### Set up terminal
 - Install terminator
 - Install Source Code Pro Medium for Powerline font (https://github.com/powerline/fonts/tree/master/SourceCodePro)
-- **Run** `ln -sfv [dotfiles]/terminal/terminator_confg ~/.config/terminator/config`
+- **Run** `ln -sfv [dotfiles]/terminal/terminator_config ~/.config/terminator/config`
 
 ### Set up git
 - **Run** `ln -sfv [dotfiles]/git/gitignore ~/.gitignore`
