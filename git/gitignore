@@ -1,2 +1,7 @@
 .idea/
 _ide_helper*
+
+*.swp
+jsonnet
+kubectl
+rethinkdb-deb/

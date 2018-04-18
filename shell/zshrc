@@ -69,6 +69,60 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 source $ZSH/oh-my-zsh.sh
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jakob/google-cloud-sdk/path.zsh.inc' ]; then source '/home/jakob/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jakob/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/jakob/google-cloud-sdk/completion.zsh.inc'; fi
+
+export DOCKER_GATEWAY="$(ifconfig | grep docker0 -A1 | tail -1 | sed 's#.*inet \([0-9.]*\).*#\1#')"
+export RETHINKDB_TEST_ENDPOINT=$DOCKER_GATEWAY:28015
+export REINFER_TEST_NAMESPACE='python'
+export LDAP_TEST_ENDPOINT=$DOCKER_GATEWAY:8389
+export ELASTICSEARCH_TEST_ENDPOINT=$DOCKER_GATEWAY:9200
+export DEFAULT_MODEL_FAMILY="english"
+export LABELLER_MODEL_ID="random"
+export THEME_MODEL_ID="random"
+
+function jenkins () {
+    local port1=${1:-39101}
+    local port2=${2:-39102}
+    sh -c "sleep 2 && xdg-open http://localhost:${port1}" &
+    gcloud compute ssh --project=reinfer-ci --zone=europe-west1-c jenkins -- -L ${port1}:localhost:8080 -L ${port2}:localhost:8971
+}
+
+function staging-rethink () {
+    local port=${1:-38016}
+    gcloud compute ssh --project=reinfer-staging --zone=europe-west1-c rethink-1 -- -L ${port}:rethink-1:28015 -L 30048:rethink-1:8080
+}
+
+function prod-rethink () {
+    local port=${1:-48016}
+    gcloud compute ssh --project=reinfer-prod --zone=europe-west1-d rethink-7k30 -- -L ${port}:rethink-7k30:28015 -L 40048:rethink-7k30:8080
+}
+
+function staging-elastic () {
+    local port=${1:-39201}
+    gcloud compute ssh --project=reinfer-staging --zone=europe-west1-c elasticsearch-1 -- -L ${port}:elasticsearch-1:9200
+}
+
+alias pt='papertrail'
+alias ptp='papertrail -g prod'
+alias pts='papertrail -g staging'
+alias gu=gsutil
+alias dcr='docker-compose rm'
+alias dcu='docker-compose up'
+alias dcs='docker-compose stop'
+alias dcb='docker-compose build'
+
+function ptsf () {
+  papertrail -g staging -f gcp-staging-$1
+}
+
+function ptpf () {
+  papertrail -g prod -f gcp-prod-$1
+}
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
