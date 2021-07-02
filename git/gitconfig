@@ -1,7 +1,7 @@
 [core]
 	filemode = false
 	autocrlf = input
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 	pager = less -x4
 [user]
@@ -11,3 +11,5 @@
 	ui = true
 [push]
 	default = current
+[commit]
+	gpgsign = true

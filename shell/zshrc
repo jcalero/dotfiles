@@ -49,19 +49,20 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast)
+plugins=(git gitfast)
 
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
-export WORKON_HOME=$HOME/.virtualenv
-export PROJECT_HOME=$HOME/code
-source $HOME/.local/bin/virtualenvwrapper.sh
-
 export PATH=$PATH:$HOME/.vimpkg/bin
+export PATH=$HOME/.cargo/bin:$PATH
 
-alias vim="stty stop '' -ixoff ; vim"
+export RUSTC_WRAPPER=sccache
+
+export COMPOSE_DOCKER_CLI_BUILD=1
+
+alias vim="stty stop '' -ixoff ; nvim"
 # `Frozing' tty, so after any command terminal settings will be restored
 ttyctl -f
 # Remap CAPS LOCK to ESCAPE
@@ -69,41 +70,27 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 source $ZSH/oh-my-zsh.sh
 
+fpath=(~/.zsh/completion $fpath)
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/jakob/google-cloud-sdk/path.zsh.inc' ]; then source '/home/jakob/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/jakob/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/jakob/google-cloud-sdk/completion.zsh.inc'; fi
 
-export DOCKER_GATEWAY="$(ifconfig | grep docker0 -A1 | tail -1 | sed 's#.*inet \([0-9.]*\).*#\1#')"
-export RETHINKDB_TEST_ENDPOINT=$DOCKER_GATEWAY:28015
-export REINFER_TEST_NAMESPACE='python'
-export LDAP_TEST_ENDPOINT=$DOCKER_GATEWAY:8389
-export ELASTICSEARCH_TEST_ENDPOINT=$DOCKER_GATEWAY:9200
-export DEFAULT_MODEL_FAMILY="english"
-export LABELLER_MODEL_ID="random"
-export THEME_MODEL_ID="random"
+# re:infer dev environment
+source ${HOME}/code/platform/dev/shellenv
+source ${HOME}/code/platform/dev/shellrc
 
-function jenkins () {
-    local port1=${1:-39101}
-    local port2=${2:-39102}
-    sh -c "sleep 2 && xdg-open http://localhost:${port1}" &
-    gcloud compute ssh --project=reinfer-ci --zone=europe-west1-c jenkins -- -L ${port1}:localhost:8080 -L ${port2}:localhost:8971
-}
+#export MYPYPATH=${HOME}/code/platform/api:${HOME}/code/platform/auth:${HOME}/code/platform/index:${HOME}/code/platform/labeller:${HOME}/code/platform/user-model-store:${HOME}/code/platform/predict/server:${HOME}/code/platform/predict/shared:${HOME}/code/platform/pycommon:${HOME}/code/platform/pyrethool:${HOME}/code/platform/pyweb:${HOME}/code/platform/refile/client:${HOME}/code/platform/refile/server:${HOME}/code/platform/rpz:${HOME}/code/platform/sentence:${HOME}/code/platform/store:${HOME}/code/platform/summary/client:${HOME}/code/platform/summary/server:${HOME}/code/platform/theme:${HOME}/code/platform/train:${HOME}/code/platform/refinery:${HOME}/code/platform/parse-email
+# project and install settings
+export REPO_ROOT="$HOME/code/platform"
+# set mypypath
+export MYPYPATH="$(find ${REPO_ROOT} -name 'setup.py' -not -wholename '**/node_modules/**' | xargs dirname | tr '\n' ':')$MYPYPATH"
 
-function staging-rethink () {
-    local port=${1:-38016}
-    gcloud compute ssh --project=reinfer-staging --zone=europe-west1-c rethink-1 -- -L ${port}:rethink-1:28015 -L 30048:rethink-1:8080
-}
-
-function prod-rethink () {
-    local port=${1:-48016}
-    gcloud compute ssh --project=reinfer-prod --zone=europe-west1-d rethink-7k30 -- -L ${port}:rethink-7k30:28015 -L 40048:rethink-7k30:8080
-}
-
-function staging-elastic () {
-    local port=${1:-39201}
-    gcloud compute ssh --project=reinfer-staging --zone=europe-west1-c elasticsearch-1 -- -L ${port}:elasticsearch-1:9200
+function fullcheck () {
+  find -name '.flake8' | grep -v './ci/' | xargs -P10 -IX sh -c 'cd $(dirname X) && echo "flake8 $(dirname X)" && flake8 reinfer' &&
+  find -name 'mypy.ini' | grep -v './ci/|./store/' | xargs -P10 -IX sh -c 'cd $(dirname X) && echo "mypy $(dirname X)" && mypy reinfer'
 }
 
 alias pt='papertrail'
@@ -114,6 +101,10 @@ alias dcr='docker-compose rm'
 alias dcu='docker-compose up'
 alias dcs='docker-compose stop'
 alias dcb='docker-compose build'
+alias dc='docker-compose'
+alias wr="venv r"
+alias cwr="cd ~/code/platform;wr"
+alias gld='git log --pretty=format:"%C(auto,yellow)%h%C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN %C(auto,reset)%s%C(auto,red)% gD% D" --date=short --no-merges $(git describe --tags --abbrev=0)..HEAD'
 
 function ptsf () {
   papertrail -g staging -f gcp-staging-$1
@@ -121,6 +112,50 @@ function ptsf () {
 
 function ptpf () {
   papertrail -g prod -f gcp-prod-$1
+}
+
+source <(kubectl completion zsh)
+
+### venv helpers
+# usage
+# $ mkvenv myvirtualenv # creates venv under ~/.venv/
+# $ venv myvirtualenv   # activates venv
+# $ deactivate          # deactivates venv
+# $ rmvenv myvirtualenv # removes venv
+# $ lsvenv              # lists available venvs
+
+export VENV_HOME="$HOME/.venv"
+[[ -d $VENV_HOME ]] || mkdir $VENV_HOME
+
+venv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      source "$VENV_HOME/$1/bin/activate"
+  fi
+}
+
+mkvenv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      python3 -m venv $VENV_HOME/$1
+  fi
+}
+
+rmvenv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      rm -r $VENV_HOME/$1
+  fi
+}
+
+lsvenv() {
+  ls $VENV_HOME
 }
 
 # You may need to manually set your language environment
@@ -164,3 +199,10 @@ SAVEHIST=100000
 unsetopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
+# Created by `userpath` on 2020-07-01 09:22:48
+export PATH="$PATH:/home/jakob/.local/bin"
+
+# fnm
+export PATH=/home/jakob/.fnm:$PATH
+eval "`fnm env`"
