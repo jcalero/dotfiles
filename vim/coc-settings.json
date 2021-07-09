@@ -1,0 +1,31 @@
+{
+  "coc.preferences.rootPatterns": ["setup.py", "Cargo.toml", "Dockerfile", "package.json"],
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "79"],
+  "python.sortImports.path": "isort",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8CategorySeverity.W": "Information",
+  "pyright.disableSelfClsNotAccessed": true,
+  "pyright.disableDiagnostics": true,
+  "rust-analyzer.checkOnSave.enable": true,
+  "rust-analyzer.checkOnSave.allTargets": true,
+  "rust-analyzer.checkOnSave.allFeatures": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "javascript",
+    "css",
+    "python"
+  ]
+}
