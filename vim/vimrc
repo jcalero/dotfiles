@@ -114,6 +114,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 hi! link CocFloating ColorColumn
+hi! CocErrorFloat ctermfg=1* ctermbg=235
 hi! CocInfoSign ctermfg=6*
 
 " CtrlP
@@ -136,9 +137,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '__pycache__', '\.egg-info$'
 
 " Autoformat
 
-let g:formatdef_sortblack = '"isort - | black --line-length 79 - 2> /dev/null"'
+let g:formatdef_isort = '"isort - 2> /dev/null"'
 let g:formatdef_jfmt = '"jsonnet fmt -n 4 --string-style d --no-pad-arrays -"'
-let g:formatters_python = ['sortblack']
+let g:formatters_python = ['isort']
 let g:formatters_jsonnet = ['jfmt']
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
@@ -185,7 +186,7 @@ augroup CustomAU
     \| set softtabstop=4
     \| set textwidth=79
     \| set colorcolumn=+1
-    "\| au! BufWritePre <buffer> :silent Autoformat
+    \| au! BufWritePre <buffer> :silent Autoformat
 
   au FileType jsonnet
         \  set textwidth=100
