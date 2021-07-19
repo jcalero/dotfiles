@@ -8,7 +8,6 @@ Plug 'Chiel92/vim-autoformat'                     " Autoformat
 Plug 'mhinz/vim-signify'                          " Git gutter support
 Plug 'tpope/vim-fugitive'                         " Vim git integration
 Plug 'Xuyuanp/nerdtree-git-plugin'                " Git support for NERDTree
-Plug 'rking/ag.vim'                               " File search
 Plug 'preservim/nerdcommenter'                    " Block comment code tools
 Plug 'Vimjas/vim-python-pep8-indent'              " Nicer indent for pep8
 Plug 'vim-airline/vim-airline'                    " Vim statusline
@@ -20,6 +19,8 @@ Plug 'vim-test/vim-test'                          " Run tests from within vim
 Plug 'leafgarland/typescript-vim'                 " Typescript support
 Plug 'peitalin/vim-jsx-typescript'                " React jsx syntax
 Plug 'crusoexia/vim-monokai'                      " Monokai theme
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf installer
+Plug 'junegunn/fzf.vim'                           " fuzzy file searcher & ripgrep integration
 
 call plug#end()
 
