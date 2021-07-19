@@ -37,3 +37,13 @@ Linux home configuration files and scripts
 - Run `:CocInstall coc-tsserver`
 - Run `:CocInstall coc-rust-analyzer`
 - Run `:CocInstall coc-diagnostic`
+- Run `:CocInstall coc-prettier`
+
+### Set up python support in venv
+- In your virtual environment, [follow instructions here](https://neovim.io/doc/user/provider.html#provider-python).
+- Run `pip install pynvim`.
+
+### Set up fzf in vim
+- Install `bat` - `sudo apt install bat`
+- If installation fails due to some crate.json error try `sudo apt install -o Dpkg::Options::="--force-overwrite" bat`
+- Create a symlink to rename `batcat` to `bat` - `sudo ln -s /usr/bin/batcat /usr/local/bin/bat`
