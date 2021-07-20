@@ -137,7 +137,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '__pycache__', '\.egg-info$'
 
 " Autoformat
 
-let g:formatdef_isort = '"isort - 2> /dev/null"'
+let g:formatdef_isort = '"isort --settings-file ~/code/platform/ci/pyhelp/pyproject.toml - 2> /dev/null"'
 let g:formatdef_jfmt = '"jsonnet fmt -n 4 --string-style d --no-pad-arrays -"'
 let g:formatters_python = ['isort']
 let g:formatters_jsonnet = ['jfmt']
