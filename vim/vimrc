@@ -206,6 +206,14 @@ augroup CustomAU
         \| set shiftwidth=2
         \| set softtabstop=2
 
+  au FileType typescriptreact
+        \  set textwidth=100
+        \| set shiftwidth=2
+        \| set softtabstop=2
+
+  au FileType sql
+        \  set shiftwidth=2
+
   au BufWritePre * :%s/\s\+$//e
 
   " Custom filetypes
