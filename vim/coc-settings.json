@@ -12,6 +12,7 @@
   "rust-analyzer.checkOnSave.enable": true,
   "rust-analyzer.checkOnSave.allTargets": true,
   "rust-analyzer.checkOnSave.allFeatures": true,
+  "rust-analyzer.inlayHints.typeHints": false,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
