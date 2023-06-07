@@ -54,6 +54,7 @@ set clipboard+=unnamedplus     " Yank to the system clipboard
 
 " Set highlight color for Search match to replace monokai theme default
 hi Search cterm=none ctermbg=240
+hi CocInlayHint ctermfg=darkgrey ctermbg=235 guifg=#E8E8E3 guibg=#2D2E27
 
 " ==================== LANGUAGE SETTINGS ==================== "
 
@@ -88,17 +89,27 @@ tmap <C-n> <C-\><C-n>
 " ==================== PLUGIN SETTINGS ==================== "
 
 " coc.nvim
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -168,7 +179,7 @@ let g:airline#extensions#coc#info_symbol = ':'
 let test#strategy = "neovim"
 
 nmap <silent> <C-t><C-t> :TestNearest -vvvs<CR>
-nmap <silent> <C-t>f :TestFile<CR>
+nmap <silent> <C-t>f :TestFile -n8<CR>
 nmap <silent> <C-t>l :TestLast<CR>
 
 " ==================== CUSTOM COMMANDS ==================== "

@@ -1,5 +1,5 @@
 {
-  "coc.preferences.rootPatterns": ["setup.py", "Cargo.toml", "Dockerfile", "package.json"],
+  "workspace.rootPatterns": ["setup.py", "Cargo.toml", "Dockerfile", "package.json"],
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--line-length", "79", "--fast"],
   "python.sortImports.path": "isort",
@@ -8,11 +8,12 @@
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8CategorySeverity.W": "Information",
+  "pyright.enable": true,
+  "pyright.inlayHints.variableTypes": false,
   "pyright.disableDiagnostics": true,
   "rust-analyzer.checkOnSave.enable": true,
   "rust-analyzer.checkOnSave.allTargets": true,
-  "rust-analyzer.checkOnSave.allFeatures": true,
-  "rust-analyzer.inlayHints.typeHints": false,
+  "rust-analyzer.diagnostics.disabled": ["macro-error"],
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
@@ -27,5 +28,6 @@
     "javascript",
     "css",
     "python"
-  ]
+  ],
+  "suggest.noselect": true
 }

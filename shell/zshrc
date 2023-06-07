@@ -70,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast)
+plugins=(git gitfast docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,26 +90,27 @@ if [ -f '/home/jakob/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jakob
 ##### User configuration
 
 # All the below was added by Jakob manually
+export REPO_ROOT="$HOME/code/platform"
+export REINFER_PLATFORM_HOME="$HOME/code/platform"
 
 source ${HOME}/code/platform/dev/shellrc
 source ${HOME}/code/platform/dev/shellenv
+source ${HOME}/.private_envs
 
 source <(kubectl completion zsh)
 
-export REPO_ROOT="$HOME/code/platform"
-export MYPYPATH="$(find ${REPO_ROOT} -name 'setup.py' -not -wholename '**/node_modules/**' | xargs dirname | tr '\n' ':')$MYPYPATH"
+export CUDA_VISIBLE_DEVICES=-1
 
 # Aliases
 alias vim="stty stop '' -ixoff; nvim"
 alias gu=gsutil
 
-alias dcu='docker-compose up'
-alias dc='docker-compose'
-
 alias cwr="cd ~/code/platform;wr"
 alias wr="venv r"
 
 alias gld='git log --pretty=format:"%C(auto,yellow)%h%C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN %C(auto,reset)%s%C(auto,red)% gD% D" --date=short --no-merges $(git describe --tags --abbrev=0)..HEAD'
+alias dc="dco"
+alias fd="fdfind"
 
 ### venv helpers
 # usage
