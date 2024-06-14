@@ -21,6 +21,7 @@ Plug 'peitalin/vim-jsx-typescript'                " React jsx syntax
 Plug 'crusoexia/vim-monokai'                      " Monokai theme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf installer
 Plug 'junegunn/fzf.vim'                           " fuzzy file searcher & ripgrep integration
+Plug 'mustache/vim-mustache-handlebars'           " Mustache/handlebars support
 
 call plug#end()
 

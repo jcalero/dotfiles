@@ -103,10 +103,14 @@ export CUDA_VISIBLE_DEVICES=-1
 
 # Aliases
 alias vim="stty stop '' -ixoff; nvim"
-alias gu=gsutil
 
-alias cwr="cd ~/code/platform;wr"
-alias wr="venv r"
+wr_activate() {
+  source /home/jakob/code/platform/.venv/bin/activate
+}
+
+alias c="cd ~/code/platform"
+alias wr="source /home/jakob/code/platform/.venv/bin/activate"
+alias cwr="c;wr"
 
 alias gld='git log --pretty=format:"%C(auto,yellow)%h%C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN %C(auto,reset)%s%C(auto,red)% gD% D" --date=short --no-merges $(git describe --tags --abbrev=0)..HEAD'
 alias dc="dco"
@@ -151,4 +155,9 @@ rmvenv() {
 
 lsvenv() {
   ls $VENV_HOME
+}
+
+git_main_branch() {
+  ref=`git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'`
+  echo $ref
 }
