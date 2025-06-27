@@ -10,6 +10,7 @@ Assuming this repository is checked out in `~/code/dotfiles/`.
 ### Configure terminal
 - Install [NerdFont Sauce Code Pro Medium Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
 - Set gnome-terminal settings to Sauce Code Pro Medium (size 10), Colour "Grey on Black", Palette "Tango".
+- Change Caps Lock to map to ESC - `dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"`
 
 ### Set up git (Optional)
 - **Run** `ln -sfv ~/code/dotfiles/git/gitignore ~/.gitignore`
@@ -26,7 +27,7 @@ Assuming this repository is checked out in `~/code/dotfiles/`.
 - Restart tmux and run `<prefix> + I` to install new plugins.
 
 ### Set up vim
-- Install [Neovim with python3 support](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+- Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
 - Install ripgrep `sudo apt install ripgrep`
 - Install [vim-plug](https://github.com/junegunn/vim-plug#neovim)
 - **Run** `ln -sfv ~/code/dotfiles/vim/vimrc ~/.config/nvim/init.vim`
@@ -41,7 +42,7 @@ Assuming this repository is checked out in `~/code/dotfiles/`.
 - Run `:CocInstall coc-diagnostic`
 - Run `:CocInstall coc-prettier`
 
-### Set up python support in venv
+### Set up nvim-python support in venv
 - In your virtual environment, [follow instructions here](https://neovim.io/doc/user/provider.html#provider-python).
 - Run `pip install pynvim`.
 
